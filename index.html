@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Niraamya Health</title>
+ 
+	      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+          <script src="libs/jquery-2.1.4.js"></script>
+	      <script  src="libs/angular.js"></script>
+	      <script src="libs/angular-route.js"></script>
+	      <script  src="libs/angular-cookies.js"></script>
+	      <script src="app/app.js"></script>
+      <link href="assets/css/app.css" rel="stylesheet" />
+    <script src="js/services/users/authentication.service.js"></script>
+    <script src="js/services/users/flash.service.js"></script>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div data-ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" data-ng-if="flash" data-ng-bind="flash.message"></div>
+                <div data-ng-view></div>
+            </div>
+        </div>
+    </div>
+  
+
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> </script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="js/services/users/user.service.local-storage.js"></script>
+
+    <script src="js/controllers/home/home.controller.js"></script>
+    <script src="js/controllers/users/login.controller.js"></script>
+    <script src="js/controllers/users/register.controller.js"></script>
+</body>
+</html>
